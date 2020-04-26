@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 
 import Links from "../common/Links";
+import SideNav from "./SideNav";
 
 function Navbar() {
-  // const [open, setOpen] = useState(false);
+  const [favourites, addToFavourites] = useState([]);
+  const [toBeWatched, addToBeWatched] = useState([]);
 
   useEffect(() => {
     const sideNav = document.getElementById("slide-out");
+    const dropdown = document.getElementById("dropdown");
     M.Sidenav.init(sideNav, { draggable: true });
+    M.Dropdown.init(dropdown, { alignment: "right" });
   });
 
   return (
@@ -30,18 +34,7 @@ function Navbar() {
         </div>
       </nav>
       <ul id={"slide-out"} className={"sidenav"}>
-        <li>
-          <a href="sass.html">Sass</a>
-        </li>
-        <li>
-          <a href="badges.html">Components</a>
-        </li>
-        <li>
-          <a href="collapsible.html">Javascript</a>
-        </li>
-        <li>
-          <a href="mobile.html">Mobile</a>
-        </li>
+        <SideNav favourites={favourites} later={toBeWatched} />
       </ul>
     </div>
   );

@@ -10,6 +10,10 @@ import rootReducer from "../store/reducers/root";
  *
  * Split from index.js for better maintainability.
  *
+ * Applying thunk as middleware in order to halt
+ * the dispatch from action creators which will
+ * let us fetch data and dispatch actions in callbacks.
+ *
  * @param {object} preloadedState - Added in case we need to add
  * a preloaded state later.
  */

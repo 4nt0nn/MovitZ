@@ -1,15 +1,12 @@
 import axios from "axios";
 
-const API_KEY = "631def957d78f448801140b460e86535";
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 // const BASE_URL = "https://api.themoviedb.org/3/movie/550?api_key=";
-const BASE_URL = "https://api.themoviedb.org/3/search/movie?api_key=";
+const BASE_URL = process.env.REACT_APP_TMDB_BASE_URL;
 
 export const getMovies = (searchWord) => {
   return axios({
     method: "get",
-    url: `${BASE_URL}${API_KEY}&query=${searchWord}`,
-    //   headers: {
-    //     Authorization: `Bearer ${data.accessToken.jwtToken}`
-    //   }
+    url: `${BASE_URL}search/movie?api_key=${API_KEY}&query=${searchWord}`,
   });
 };
