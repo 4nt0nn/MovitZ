@@ -6,7 +6,7 @@ import configStore from "./config/configStore";
 
 import App from "./App";
 
-import "./index.css";
+import "./styles/index.css";
 
 const store = configStore();
 

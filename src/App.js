@@ -1,10 +1,22 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import "materialize-css/dist/css/materialize.min.css";
 
+import Navbar from "./components/layout/Navbar";
+import Router from "./components/router";
+
+/**
+ * Main app component holding our router
+ * and top navbar.
+ */
 function App() {
   return (
-    <div className="App">
-      <a href="#">learn react</a>
-    </div>
+    <BrowserRouter>
+      <div className={"App"}>
+        <Navbar />
+        <Router />
+      </div>
+    </BrowserRouter>
   );
 }
 
