@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-import Links from "../common/Links";
+import Links from "../presentational/Links";
 import SideNav from "./SideNav";
 
-function Navbar() {
-  const [favourites, addToFavourites] = useState([]);
-  const [toBeWatched, addToBeWatched] = useState([]);
-
+/**
+ * Functional component for
+ * rendering the navbar as well as
+ * the slide out mobile menu.
+ */
+const Navbar = () => {
   useEffect(() => {
     const sideNav = document.getElementById("slide-out");
     const dropdown = document.getElementById("dropdown");
@@ -18,7 +20,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav className={"nav-wrapper grey darken-4"}>
+      <nav className={"nav-wrapper black"}>
         <div className={"container"}>
           <a
             href={"#!"}
@@ -34,10 +36,10 @@ function Navbar() {
         </div>
       </nav>
       <ul id={"slide-out"} className={"sidenav"}>
-        <SideNav favourites={favourites} later={toBeWatched} />
+        <SideNav />
       </ul>
     </div>
   );
-}
+};
 
 export default Navbar;
