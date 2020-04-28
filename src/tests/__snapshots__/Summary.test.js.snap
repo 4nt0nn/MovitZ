@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Summary /> should render correctly in "debug" mode 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <Summary
+    debug={true}
+  />
+</ContextProvider>
+`;
+
+exports[`<Summary /> should render with child components in "debug" mode 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <MemoryRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "t59vpt",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "t59vpt",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Summary
+        debug={true}
+        movie={
+          Object {
+            "title": "Star Wars",
+          }
+        }
+      >
+        <Loading
+          text="Loading content..."
+        >
+          <div
+            className="loading-screen valign-wrapper"
+          >
+            <h5
+              className="white-text"
+            >
+              Loading content...
+            </h5>
+            <div
+              className="progress container"
+            >
+              <div
+                className="indeterminate"
+              />
+            </div>
+          </div>
+        </Loading>
+      </Summary>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;
+
+exports[`Summary should render correctly in "debug" mode 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
+>
+  <Summary
+    debug={true}
+  />
+</ContextProvider>
+`;

@@ -1,0 +1,7 @@
+Small cross browser compability tests
+has been conducted in the following broswers:
+
+# Chrome v81.0.4044.129
+# Firefox v41.0.2
+# Safari v13.1
+# Microsoft Edge v44.18362.449.0

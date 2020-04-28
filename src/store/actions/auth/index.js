@@ -48,7 +48,6 @@ export const tryToRegister = (firebase, credentials) => {
         functions.toastFunction("Your registration was successfull!", true);
       })
       .catch((e) => {
-        console.log(e);
         dispatch({ type: Types.FAILED_TO_CREATE_ACCOUNT });
         functions.toastFunction("Failed to register account", false);
       });
