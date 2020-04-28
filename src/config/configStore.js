@@ -1,6 +1,8 @@
 import { applyMiddleware, createStore } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { getFirebase } from "react-redux-firebase";
+import { getFirestore } from "redux-firestore";
 
 import rootReducer from "../store/reducers/root";
 
@@ -18,7 +20,13 @@ import rootReducer from "../store/reducers/root";
  * a preloaded state later.
  */
 export default function configureStore(preloadedState) {
-  const middlewares = [thunkMiddleware];
+  /**
+   * Passing extra arguments to middleware in order to use getFirebase/getFirestore
+   * in our action creators to communicate with firebase/firestore.
+   */
+  const middlewares = [
+    thunkMiddleware.withExtraArgument({ getFirebase, getFirestore }),
+  ];
   const middlewareEnhancer = applyMiddleware(...middlewares);
 
   const enhancers = [middlewareEnhancer];

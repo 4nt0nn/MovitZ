@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly in "debug" mode 1`] = `
+<BrowserRouter>
+  <AuthIsLoaded>
+    <div
+      className="App"
+    >
+      <Navbar />
+      <Router />
+    </div>
+  </AuthIsLoaded>
+</BrowserRouter>
+`;

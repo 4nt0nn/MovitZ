@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #f0f8ff; */
+  background-color: #212224;
 }
 
 code {
@@ -13,18 +13,27 @@ code {
     monospace;
 }
 
+/*
+** Styles for containers, collections and
+** collapsibles used for reset of materialize
+** css and colors.
+*/
 .collection {
   margin: 0px;
   border: none;
 }
 
-.col.side-nav-container {
-  padding: 0px 0px;
-  border-right: 1px solid #e0e0e0;
-  min-height: 91.4vh;
+.col.collection .collection-item {
+  background-color: #101518;
 }
+
+.collection .collection-item {
+  background-color: #101518;
+}
+
 .row.dashboard-container {
   margin-bottom: 0px;
+  max-height: 91.4vh;
 }
 
 .collapsible {
@@ -33,15 +42,190 @@ code {
   border-right: none;
   margin: 0px;
   padding-top: 30px;
+  background-color: #101518;
 }
 
 .collapsible-header {
   border-bottom: none;
-}
-.collapsible-body {
-  border-bottom: none;
+  background-color: #101518;
+  color: #ffffff;
+  font-weight: bold;
 }
 
-/* #nav-mobile {
-  margin: 1px 0px 0px 0px;
-} */
+.collapsible-body {
+  border-bottom: none;
+  padding: 0px;
+}
+
+/*
+** SideNav and link style.
+*/
+.col.side-nav-container {
+  padding: 0px 0px;
+  border-right: none;
+  min-height: 91.4vh;
+  background-color: #101518;
+}
+
+.sidenav li > a {
+  color: #ffffff;
+  font-weight: bold;
+}
+a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.collection-item.avatar .sidenav {
+  background-color: #101518;
+  justify-content: space-evenly;
+}
+
+#slide-out {
+  background-color: #101518;
+}
+
+.movie-link-sidenav {
+  padding: 0 23.5px 0 0px !important;
+}
+
+/*
+** Padding reset style.
+*/
+.title {
+  font-size: 12px;
+}
+
+/*
+** Loading screen styles.
+*/
+.loading-screen {
+  height: 100vh;
+  background-color: #212224;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*
+** "Sudo" reset of lineheight. 
+** bug from materialize in btn with symbol
+** without a set size.
+*/
+.settings-link {
+  line-height: 40px !important;
+}
+
+/*
+** Toast styling for
+** error and success toasts.
+*/
+.success-toast {
+  color: #5cb85c;
+  font-weight: bold;
+}
+
+.error-toast {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+/*
+** Card and Summary styles below including
+** buttons, badge and containers
+** 
+*/
+.movie-card-container {
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 65.5vh;
+  padding-top: 30px;
+}
+
+.row.movie-card-container {
+  margin: 0px auto;
+}
+
+.movie-card {
+  position: relative;
+  margin-bottom: 50px;
+  height: 465px;
+}
+.movie-image {
+  height: 300px;
+  width: 200px;
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+span.badge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0px auto;
+  max-width: 80px;
+  top: -10px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.movie-card-misc {
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  max-width: 200px;
+}
+
+.movie-backdrop {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.summary-image-container {
+  position: relative;
+}
+
+.summary-movie-overview {
+  padding: 0px 0px;
+}
+
+.summary-back-link {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  opacity: 0.8;
+}
+
+.add-to-btn {
+  border-radius: 50px;
+  margin: 5px 0px;
+}
+.summary-movie-title-card-overview {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.summary-movie-title {
+  margin-bottom: 20px;
+}
+.summary-overview-genres {
+  margin: 0px 5px;
+}
+
+/*
+** Styles for 600px width and over.
+*/
+@media only screen and (min-width: 600px) {
+  .summary-movie-title-card-overview {
+    top: 40%;
+  }
+  .summary-overview-genres {
+    margin: 200px 5px;
+  }
+}

@@ -7,47 +7,58 @@ const INIT_STATE = {
   loading: false,
   error: false,
   success: false,
-  movies: null,
-  movie: null,
 };
 
 /**
- * Arrow function reducer for the movie action types.
+ * Arrow function reducer for the auth action types.
  *
  * @param {object} state
  * @param {object} action
  */
-const MovieReducer = (state = INIT_STATE, action) => {
+const AuthReducer = (state = INIT_STATE, action) => {
   const { type, payload } = action;
   switch (type) {
-    case Types.TRY_TO_FETCH_MOVIES:
+    case Types.TRY_TO_SIGN_IN:
       return {
         ...state,
         loading: true,
       };
-    case Types.SUCCESSFULLY_FETCHED_MOVIES:
+    case Types.SUCCESSFULLY_SIGNED_IN:
       return {
         ...state,
         success: true,
-        movies: payload,
       };
-    case Types.FAILED_TO_FETCH_MOVIES:
+    case Types.FAILED_TO_SIGN_IN:
       return {
         ...state,
         error: true,
       };
-    case Types.TRY_TO_FETCH_MOVIE_BY_ID:
+    case Types.TRY_TO_SIGN_OUT:
       return {
         ...state,
         loading: true,
       };
-    case Types.SUCCESSFULLY_FETCHED_MOVIE_BY_ID:
+    case Types.SUCCESSFULLY_SIGNED_OUT:
       return {
         ...state,
         success: true,
-        movie: payload,
       };
-    case Types.FAILED_TO_FETCH_MOVIE_BY_ID:
+    case Types.FAILED_TO_SIGN_OUT:
+      return {
+        ...state,
+        error: true,
+      };
+    case Types.TRY_TO_CREATE_ACCOUNT:
+      return {
+        ...state,
+        loading: true,
+      };
+    case Types.SUCCESSFULLY_CREATED_ACCOUNT:
+      return {
+        ...state,
+        success: true,
+      };
+    case Types.FAILED_TO_CREATE_ACCOUNT:
       return {
         ...state,
         error: true,
@@ -57,4 +68,4 @@ const MovieReducer = (state = INIT_STATE, action) => {
   }
 };
 
-export default MovieReducer;
+export default AuthReducer;
